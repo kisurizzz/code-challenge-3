@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function (){
             li.append(btn)
             ul.appendChild(li)
         })
+        
     }
 
     function displayFirstMovie(data){
