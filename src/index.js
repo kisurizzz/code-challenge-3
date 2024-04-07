@@ -151,16 +151,15 @@ document.addEventListener('DOMContentLoaded', function (){
         // .catch (e => console.log(e.message));
     }
     function handleDelete(movie){
-        let requestHeaders = {
-            "Content-Type": "application/json"
-        }
-        let requestBody = {
-            "id": movie.id
-        }
+       
         fetch(baseURL+movie.id, {
             method: "DELETE",
-            headers: requestHeaders,    
-            body: JSON.stringify(requestBody)
+            headers: {
+                "Content-Type": "application/json"
+            },    
+            body: JSON.stringify({
+                "id": movie.id
+            })
         })
         .then (res => res.json())
         .then (data => moviesListArray())
